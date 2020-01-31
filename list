@@ -1,2 +1,2 @@
-date
-ls -l
+sh date
+sh ls -l
