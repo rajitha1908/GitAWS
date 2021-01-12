@@ -5,5 +5,5 @@ before_install:
 - echo "new file"
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
-
+-ECHO "INSTALLED"
 after_success: echo "Success!"
