@@ -9,4 +9,5 @@ deploy:
  provider: script
  script: 
  - echo. "deployed"
+
 after_success: echo "Success!"
