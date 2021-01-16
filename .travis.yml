@@ -15,4 +15,5 @@ install:
 deploy:
 provider: script
   script: chmod +x deploy.sh
+  
 after_success: echo "Success"
