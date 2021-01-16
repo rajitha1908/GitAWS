@@ -12,7 +12,7 @@ before_install:
 
 install:
  - pip3 install -r requirements.txt
-deploy:
+script:
  - echo. "deployed"
 
 after_success: echo "Success"
