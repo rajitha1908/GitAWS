@@ -14,6 +14,7 @@ install:
  - pip3 install -r requirements.txt
 script: chmod +x deploy.sh
 deploy:
+provider: pypi
 on:
     tags: true
   
