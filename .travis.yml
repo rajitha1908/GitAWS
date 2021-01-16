@@ -13,5 +13,8 @@ before_install:
 install:
  - pip3 install -r requirements.txt
 script: chmod +x deploy.sh
+deploy:
+on:
+    tags: true
   
 after_success: echo "Success"
