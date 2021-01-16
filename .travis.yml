@@ -15,6 +15,7 @@ install:
 script: chmod +x deploy.sh
 deploy:
 provider: pypi
+user: "rajitha1905"
 on:
     tags: true
   
