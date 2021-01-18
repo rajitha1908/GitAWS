@@ -12,8 +12,9 @@ before_install:
 install:
  - pip install sh
 
+stages:
+-name: deploy
+if: tag= true
 script: chmod +x deploy.sh
-on:
- tags: true
   
 after_success: echo "Success"
