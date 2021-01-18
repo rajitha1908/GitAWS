@@ -12,7 +12,7 @@ before_install:
 install:
  - pip install sh
 
-script: echo "script phase"
+script: skip
  
 deploy:
   provider: script
