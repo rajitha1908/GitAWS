@@ -13,7 +13,8 @@ install:
  - pip install sh
 
 script:
- if: branch = master OR tag IS present
-  - chmod +x deploy.sh $TRAVIS_TAG
+ if [[ -n $TRAVIS_TAG ]]; then 
+    ./deploy.sh;
+ fi
   
 after_success: echo "Success"
