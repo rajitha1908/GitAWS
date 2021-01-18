@@ -11,12 +11,8 @@ before_install:
 - git config --global user.email rajitha.siripurapu@gmail.com
 
 install:
- - pip3 install -r requirements.txt
-script: chmod +x deploy.sh
-deploy:
-provider: pypi
-user: "rajitha1905"
-on:
-    tags: true
+ - pip install sh
+
+script: deploy.sh
   
 after_success: echo "Success"
