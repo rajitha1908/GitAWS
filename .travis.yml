@@ -12,10 +12,9 @@ before_install:
 install:
  - pip install sh
 
-script:
- echo "script phase"
+script: echo "script phase"
  
- deploy:
+deploy:
   provider: script
   script: chmod +x deploy.sh
   on:
