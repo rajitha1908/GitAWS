@@ -12,7 +12,7 @@ before_install:
 install:
  - pip install sh
  
-if: branch = tag IS present
+if: IF branch = master AND tag IS present
 
 script:
  - chmod +x deploy.sh $TRAVIS_TAG
