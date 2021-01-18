@@ -12,7 +12,6 @@ before_install:
 install:
  - pip install sh
 
-stages:
 deploy:
 script: chmod +x deploy.sh
 on: 
