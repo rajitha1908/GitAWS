@@ -12,9 +12,6 @@ before_install:
 install:
  - pip install sh
 
-stages:
- -name: deploy:
-  if: tag IS present
-  script: chmod +x deploy.sh
+script: chmod +x deploy.sh $TRAVIS_TAG
   
 after_success: echo "Success"
