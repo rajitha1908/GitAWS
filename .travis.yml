@@ -13,10 +13,10 @@ install:
  - pip install sh
 
 deploy:
-provider: script
-script: chmod +x deploy.sh
-on: 
- tags: true
+ provider: script
+ script: chmod +x deploy.sh
+ on: 
+  tags: true
 
   
 after_success: echo "Success"
