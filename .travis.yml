@@ -14,7 +14,7 @@ install:
 
 stages:
 -name: deploy:
- if: tag IS present
- script: chmod +x deploy.sh
+if: tag IS present
+script: chmod +x deploy.sh
   
 after_success: echo "Success"
