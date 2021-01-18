@@ -13,8 +13,8 @@ install:
  - pip install sh
 
 stages:
--name: deploy:
-if: tag IS present
-script: chmod +x deploy.sh
+ -name: deploy:
+  if: tag IS present
+  script: chmod +x deploy.sh
   
 after_success: echo "Success"
