@@ -13,10 +13,8 @@ install:
  - pip install sh
  
 #if: branch = master OR tag IS present
-if [ $(git tag -l "$version") ]; then
-    echo "yes"
-else
-    echo "no"
+if [ $(git tag -l "$version") ];
+    echo "yes";
 fi
 
 script:
