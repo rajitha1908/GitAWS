@@ -13,9 +13,13 @@ install:
  - pip install sh
 
 script:
- if [[ $TRAVIS_TAG ]]; then 
-    ./deploy.sh;
- fi
+ echo "script phase"
+ 
+ deploy:
+  provider: script
+  script: chmod +x deploy.sh
+  on:
+   tags: true
  
   
 after_success: echo "Success"
