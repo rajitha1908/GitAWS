@@ -11,9 +11,10 @@ before_install:
 
 install:
  - pip install sh
+ 
+if: branch = tag IS present
 
 script:
- - behave --tags=priority
  - chmod +x deploy.sh $TRAVIS_TAG
   
 after_success: echo "Success"
