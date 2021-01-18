@@ -21,4 +21,4 @@ deploy:
    tags: true
  
   
-after_success: echo "Success"
+after_deploy: echo "Success"
