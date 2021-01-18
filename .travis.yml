@@ -14,8 +14,9 @@ install:
 
 stages:
 deploy:
+script: chmod +x deploy.sh
 on: 
  tag: true
-script: chmod +x deploy.sh
+
   
 after_success: echo "Success"
