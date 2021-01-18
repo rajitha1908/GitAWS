@@ -14,9 +14,9 @@ install:
  
 #if: branch = master OR tag IS present
 if [ $(git tag -l "$version") ]; then
-    echo yes
+    echo "yes"
 else
-    echo no
+    echo "no"
 fi
 
 script:
