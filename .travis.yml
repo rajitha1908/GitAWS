@@ -19,4 +19,4 @@ deploy:
   
 after_deploy: 
   - ls
-  - cat output.log
+  - cat deploy.sh
