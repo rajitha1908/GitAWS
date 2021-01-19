@@ -22,9 +22,10 @@ install:
   - tar -jxf gcc.tar.bz2 --strip=1
   
   - export PATH=$HOME/arm-gcc-toolchain/bin:$PATH
-  - cd/
+  
 
 script: 
+  - cd/
   - ./deploy.sh
   
 after_deploy: 
