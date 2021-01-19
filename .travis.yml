@@ -11,11 +11,7 @@ before_install:
 
 install:
  - pip install sh
-script: skip
- 
-deploy:
-  provider: script
-  script: chmod +x ./deploy.sh
+script: chmod +x ./deploy.sh
   
 after_deploy: 
   - ls
