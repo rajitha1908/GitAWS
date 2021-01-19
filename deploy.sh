@@ -1,4 +1,4 @@
-echo "deploy phase"
+echo 'deploy phase'
 echo "deployed"
 file="../test.txt"
 echo "Adding first line" > $file
