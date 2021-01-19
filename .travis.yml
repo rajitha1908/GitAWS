@@ -2,9 +2,8 @@ os:
  "linux"
 dist:
  "focal"
-language: python
-node_js:
-- "3.6"
+language: c
+
 before_install:
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
@@ -12,17 +11,31 @@ before_install:
 install:
  - pip install sh
  
-jobs:
- include:
-  env:
-   TARGET_PLATFORM : bee_v1 || bee_v2 || bee_v3 || bee_er
-   
+matrix:
+  include:
+    - name: 9-2020-q2
+      env: GCC_URL=https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2?revision=bc2c96c0-14b5-4bb4-9f18-bceb4050fee7?product=GNU%20Arm%20Embedded%20Toolchain,64-bit,,Linux,7-2018-q2-update
+    -name: TARGET_PLATFORM
+      env: 
+        - bee_v1
+        - bee_v2
+        - bee_v3
+        - bee_er
+
+install:
+  - pushd .
+  - cd ~ 
+  - mkdir arm-gcc-toolchain
+  - wget -O $HOME/arm-gcc-toolchain/gcc.tar.bz2 $GCC_URL
+  - cd arm-gcc-toolchain
+  - tar -jxf gcc.tar.bz2 --strip=1
+  - popd
+  - export PATH=$HOME/arm-gcc-toolchain/bin:$PATH
+
 script: 
  - chmod +x deploy.sh
  - ./deploy.sh
-
-
   
 after_deploy: 
   - ls
-  - cat deploy.sh
+  
