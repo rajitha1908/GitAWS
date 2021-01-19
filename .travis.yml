@@ -24,8 +24,7 @@ install:
   - export PATH=$HOME/arm-gcc-toolchain/bin:$PATH
 
 script: 
- - chmod +x deploy.sh
- - ./deploy.sh
+  - ./deploy.sh
   
 after_deploy: 
   - ls
