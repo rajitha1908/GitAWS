@@ -16,8 +16,5 @@ script: skip
 deploy:
   provider: script
   script: chmod +x deploy.sh
-  on:
-   tags: true
- 
   
 after_success: echo "Success"
