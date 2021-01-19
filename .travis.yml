@@ -11,6 +11,12 @@ before_install:
 
 install:
  - pip install sh
+ 
+jobs:
+ include:
+  env:
+   -TARGET_PLATFORM : bee_v1 || bee_v2 || bee_v3 || bee_er
+   
 script: 
  - chmod +x deploy.sh
  - ./deploy.sh
