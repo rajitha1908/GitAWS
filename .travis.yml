@@ -27,6 +27,7 @@ install:
   
 
 script: 
+  - chmod +x deploy.sh
   - ./deploy.sh
   
 after_deploy: 
