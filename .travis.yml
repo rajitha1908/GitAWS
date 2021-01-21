@@ -9,7 +9,9 @@ before_install:
 - echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
-- echo "${PWD}"
+  
+env:
+  cpath = ${PWD}/swarm-encrypt
 
   
 addons:
@@ -26,7 +28,7 @@ install:
 - cd ..
 - mkdir swarm-encrypt && cd swarm-encrypt
 - echo "${PWD}"
-- cp /home/travis/build/rajitha1908/GitAWS/swarm-encrypt ${PWD}
+- cp $cpath ${PWD}
 - echo "$PATH"
 - popd
 #- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
