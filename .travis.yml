@@ -16,9 +16,8 @@ addons:
     - libc6-i386 
     - make
     
-
 install:
-- pwd
+  - pwd
 
 script: 
   - chmod +x deploy.sh
