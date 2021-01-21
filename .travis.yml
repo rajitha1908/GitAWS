@@ -23,9 +23,9 @@ install:
 - tar xf gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
 - export PATH="$PATH:${PWD}/gcc-arm-none-eabi-9-2020-q2-update/bin"
 - cd ..
-- mkdir swarm-encrypt && cd swarm-encrypt
+- mkdir deploy && cd deploy
 - echo "${PWD}"
-- cp /home/travis/build/rajitha1908/GitAWS/swarm-encrypt ${PWD}
+- cp /home/travis/build/rajitha1908/GitAWS/deploy.sh ${PWD}
 - export PATH="$PATH:${PWD}"
 - echo "$PATH"
 - popd
@@ -34,7 +34,7 @@ install:
 - pwd
 
 script: 
-  - chmod +x deploy.sh
+  
   - ./deploy.sh
   
 after_deploy: 
