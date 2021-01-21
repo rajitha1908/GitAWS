@@ -6,8 +6,7 @@ language: c
 
 before_install:
 - export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
-- echo "$TRAVIS_COMMIT_MSG" | grep 'Version_Bump'; export CONTAINS_NO_VERSION_BUMP=$?; true
-- echo "PARSED EXPORTS | Commit Message $TRAVIS_COMMIT_MSG | Contains No version Bump $CONTAINS_NO_VERSION_BUMP"
+- echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
   
