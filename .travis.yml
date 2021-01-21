@@ -10,10 +10,6 @@ before_install:
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
   
-env:
-  cpath = ${PWD}/swarm-encrypt
-  
-  
 addons:
   apt:
     packages:
@@ -29,7 +25,8 @@ install:
 - cd ..
 - mkdir swarm-encrypt && cd swarm-encrypt
 - echo "${PWD}"
-- cp "$cpath" ${PWD}
+- cp /home/travis/build/rajitha1908/GitAWS/swarm-encrypt ${PWD}
+- export PATH="$PATH:${PWD}"
 - echo "$PATH"
 - popd
 #- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
