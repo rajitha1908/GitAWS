@@ -2,23 +2,27 @@ os:
  "linux"
 dist:
  "focal"
-language: python
-node_js:
-- "3.6"
+language: c
+
 before_install:
+- export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
+- echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
+  
+addons:
+  apt:
+    packages:
+    - libc6-i386 
+    - make
+    
 
 install:
- - pip install sh
+- pwd
 
-script: skip
- 
-deploy:
-  provider: script
-  script: chmod +x deploy.sh
-  on:
-   tags: true
- 
+script: 
+  - chmod +x deploy.sh
+  - ./deploy.sh
   
-after_deploy: echo "Success"
+after_deploy: 
+  - ls
