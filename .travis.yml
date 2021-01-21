@@ -5,19 +5,13 @@ dist:
 language: c
 
 before_install:
+- export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
+- echo "$TRAVIS_COMMIT_MSG" | grep 'Version_Bump'; export CONTAINS_NO_VERSION_BUMP=$?; true
+- echo "PARSED EXPORTS | Commit Message $TRAVIS_COMMIT_MSG | Contains No version Bump $CONTAINS_NO_VERSION_BUMP"
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
   
-matrix:
-  fast_finish: true
-  include:
-    - name: TARGET_PLATFORM
-      env: 
-       - swarm_bee_v1
-       - swarm_bee_v2
-       - swarm_bee_v3
-       - swarm_bee_v1 
-addons:
+
   apt:
     packages:
     - libc6-i386 
@@ -25,12 +19,6 @@ addons:
     
 
 install:
-- pushd /home/travis/build && mkdir arm-gcc && cd arm-gcc
-- curl -L0 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2?revision=05382cca-1721-44e1-ae19-1e7c3dc96118&la=en&hash=D7C9D18FCA2DD9F894FD9F3C3DC9228498FA281A" --output gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
-- tar xf gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
-- export PATH="$PATH:${PWD}/gcc-arm-none-eabi-9-2020-q2-update/bin"
-- popd
-- arm-none-eabi-gcc --version
 - pwd
 
 script: 
