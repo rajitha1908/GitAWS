@@ -9,7 +9,7 @@ before_install:
 - echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
-- echo "{PWD}"
+- echo "${PWD}"
   
 addons:
   apt:
