@@ -12,7 +12,7 @@ before_install:
   
 env:
   cpath = ${PWD}/swarm-encrypt
-
+  
   
 addons:
   apt:
@@ -28,7 +28,7 @@ install:
 - cd ..
 - mkdir swarm-encrypt && cd swarm-encrypt
 - echo "${PWD}"
-- cp $cpath ${PWD}
+- cp ${cpath} ${PWD}
 - echo "$PATH"
 - popd
 #- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
