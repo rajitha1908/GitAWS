@@ -9,6 +9,10 @@ before_install:
 - echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
+jobs:
+ include:
+   env:
+     encrypt = ./swarm-encrypt
   
 addons:
   apt:
@@ -22,9 +26,10 @@ install:
 - tar xf gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
 - export PATH="$PATH:${PWD}/gcc-arm-none-eabi-9-2020-q2-update/bin"
 - mkdir swarm-encrypt
+- cp $encrypt ${PWD}/swarm-encrypt/bin
 - echo "$PATH"
 - popd
-- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
+#- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
 - arm-none-eabi-gcc --version
 - pwd
 
