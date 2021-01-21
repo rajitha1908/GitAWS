@@ -9,6 +9,7 @@ before_install:
 - echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
+- echo "{PWD}"
   
 addons:
   apt:
@@ -26,6 +27,7 @@ install:
 - mkdir deploy && cd deploy
 - echo "${PWD}"
 - cp /home/travis/build/rajitha1908/GitAWS/deploy.sh ${PWD}
+- chmod +x deploy.sh
 - export PATH="$PATH:${PWD}"
 - echo "$PATH"
 - popd
