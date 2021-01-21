@@ -26,7 +26,7 @@ install:
 - tar xf gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
 - export PATH="$PATH:${PWD}/gcc-arm-none-eabi-9-2020-q2-update/bin"
 - mkdir swarm-encrypt
-- cp $encrypt ${PWD}/swarm-encrypt/bin
+- cp $encrypt ${PWD}/swarm-encrypt/bin/
 - echo "$PATH"
 - popd
 #- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
