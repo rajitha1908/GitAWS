@@ -15,8 +15,9 @@ install:
 - pwd
 
 script: 
- - chmod 755 deploy.sh
+ - chmod 755 toolchain
  - ./deploy.sh
+ - ./newone
   
 after_success: 
   - ls
