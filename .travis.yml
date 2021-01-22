@@ -20,8 +20,8 @@ install:
 
 script: 
  - echo "${PWD}"
- - ./tool/newone.txt
- - ./tool/deploy.sh
+ - ./newone.txt
+ - ./deploy.sh
   
 after_success: 
 - echo "deployed"
