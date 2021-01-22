@@ -17,16 +17,16 @@ install:
 - cd ..
 - echo "${PWD}"
 - cp -R /home/travis/build/rajitha1908/GitAWS/toolchain/ ${PWD}
-- chmod -R +x ${PWD}/
+- chmod -R +x ${PWD}/toolchain/
 - ls ${PWD}
 - ls ${PWD}/toolchain
 - popd
 - pwd
 
 script: 
- - chmod -R +x ${PWD}/
- - ./newone.txt
- - ./deploy.sh
+ - chmod -R +x ${PWD}/toolchain/
+ - ./toolchain/newone.txt
+ - ./toolchain/deploy.sh
   
 after_success: 
 - echo "deployed"
