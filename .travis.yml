@@ -14,7 +14,7 @@ before_install:
 install:
 - pwd
 - mkdir tool && cd tool
-- cp /home/travis/build/rajitha1908/GitAWS/toolchain ${PWD}
+- cp -R /home/travis/build/rajitha1908/GitAWS/toolchain ${PWD}
 - ls ${PWD}
 
 script: 
