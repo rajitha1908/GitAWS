@@ -16,12 +16,11 @@ install:
 - pushd /home/travis/build && mkdir arm-gcc && cd arm-gcc
 - cd ..
 - echo "${PWD}"
-- cp -R /home/travis/build/rajitha1908/GitAWS/toolchain ${PWD}
+- cp -R /home/travis/build/rajitha1908/GitAWS/toolchain/ ${PWD}
 - chmod -R +x ${PWD}/
 - ls ${PWD}
 - ls ${PWD}/toolchain
 - popd
-- arm-none-eabi-gcc --version
 - pwd
 
 script: 
