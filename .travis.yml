@@ -15,6 +15,7 @@ install:
 - pwd
 - mkdir tool && cd tool
 - cp -R /home/travis/build/rajitha1908/GitAWS/toolchain ${PWD}
+- chmod -R +x ${PWD}/
 - ls ${PWD}
 
 script: 
