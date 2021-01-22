@@ -15,7 +15,7 @@ install:
 - pwd
 
 script: 
- - find ${PWD}/toolchain -type f -exec chmod 775 {} \;
+ - chmod +x ${PWD}/toolchain -R
  - ./deploy.sh
  - ./newone
   
