@@ -10,34 +10,13 @@ before_install:
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
 - echo "${PWD}"
-  
-addons:
-  apt:
-    packages:
-    - libc6-i386 
-    - make
     
 install:
-- echo "$cpath"
-- pushd /home/travis/build && mkdir arm-gcc && cd arm-gcc
-- curl -L0 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-x86_64-linux.tar.bz2?revision=05382cca-1721-44e1-ae19-1e7c3dc96118&la=en&hash=D7C9D18FCA2DD9F894FD9F3C3DC9228498FA281A" --output gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
-- tar xf gcc-arm-none-eabi-9-2020-q2-update.tar.bz2
-- export PATH="$PATH:${PWD}/gcc-arm-none-eabi-9-2020-q2-update/bin"
-- cd ..
-- mkdir deploy && cd deploy
-- echo "${PWD}"
-- cp /home/travis/build/rajitha1908/GitAWS/deploy.sh ${PWD}
-- chmod +x deploy.sh
-- export PATH="$PATH:${PWD}"
-- echo "$PATH"
-- popd
-#- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
-- arm-none-eabi-gcc --version
 - pwd
 
 script: 
+ - chmod 644
+ - ./deploy.sh
   
-  - ./deploy.sh
-  
-after_deploy: 
+after_success: 
   - ls
