@@ -19,12 +19,10 @@ install:
 - ls ${PWD}
 
 script: 
- - pwd
- - cd toolchain
- - chmod -R +x ${PWD}/
- - ./newone.txt
- - ./deploy.sh
+ - echo "${PWD}"
+ - ./tool/newone.txt
+ - ./tool/deploy.sh
   
 after_success: 
 - echo "deployed"
- echo "deplo"
+ 
