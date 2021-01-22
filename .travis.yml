@@ -18,8 +18,9 @@ script:
  - pwd
  - cd toolchain
  - chmod -R +x ${PWD}/
- - ./deploy.sh
  - ./newone.txt
+ - ./deploy.sh
+ 
   
 after_success: 
   - ls
