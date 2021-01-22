@@ -20,7 +20,6 @@ script:
  - chmod -R +x ${PWD}/
  - ./newone.txt
  - ./deploy.sh
- 
   
 after_success: 
   - ls
