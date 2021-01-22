@@ -13,13 +13,19 @@ before_install:
     
 install:
 - pwd
-- cp -R /home/travis/build/rajitha1908/GitAWS/toolchain/ ${PWD}
+- pushd /home/travis/build && mkdir arm-gcc && cd arm-gcc
+- cd ..
+- echo "${PWD}"
+- cp /home/travis/build/rajitha1908/GitAWS/toolchain ${PWD}
 - chmod -R +x ${PWD}/
 - ls ${PWD}
 - ls ${PWD}/toolchain
+- popd
+- arm-none-eabi-gcc --version
+- pwd
 
 script: 
- - echo "${PWD}"
+ - chmod -R +x ${PWD}/
  - ./newone.txt
  - ./deploy.sh
   
