@@ -15,7 +15,7 @@ install:
 - pwd
 
 script: 
- - chmod 644
+ - chmod 644 deploy.sh
  - ./deploy.sh
   
 after_success: 
