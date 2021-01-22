@@ -15,9 +15,12 @@ install:
 - pwd
 
 script: 
+ - pwd
  - chmod -R +x ${PWD}/toolchain/
+ - cd toolchain
  - ./deploy.sh
  - ./newone
+ - cd ..
   
 after_success: 
   - ls
