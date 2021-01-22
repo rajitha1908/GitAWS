@@ -13,6 +13,9 @@ before_install:
     
 install:
 - pwd
+- mkdir tool && cd tool
+- cp ${PWD}/toolchain ${PWD}
+- ls ${PWD}
 
 script: 
  - pwd
