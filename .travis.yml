@@ -26,4 +26,5 @@ script:
  - ./deploy.sh
   
 after_success: 
-  - ls
+- echo "deployed"
+ echo "deplo"
