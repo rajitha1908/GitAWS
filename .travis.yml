@@ -1,7 +1,7 @@
 os: 
  "linux"
-dist:
- "focal"
+ "windows"
+
 language: c
 
 before_install:
@@ -9,27 +9,20 @@ before_install:
 - echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
+- if [[$TRAVIS_COMMIT_MSG =~ "DevDC1"]]; then $TRAVIS_OS_NAME = "windows"; fi
+- if [[$TRAVIS_COMMIT_MSG =~ "02L"]]; then $TRAVIS_OS_NAME = "linux"; fi
+
   
 addons:
   apt:
     packages:
     - libc6-i386 
-    - make
+    
     
 
 install:
-- pushd /home/travis/build && mkdir arm-gcc && cd arm-gcc
-- curl -L0 "https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2019q3/RC1.1/gcc-arm-none-eabi-8-2019-q3-update-linux.tar.bz2?revision=c34d758a-be0c-476e-a2de-af8c6e16a8a2?product=GNU%20Arm%20Embedded%20Toolchain%20Downloads,64-bit,,Linux,8-2019-q3-update" --output gcc-arm-none-eabi-8-2019-q3-update.tar.bz2
-- tar xf gcc-arm-none-eabi-8-2019-q3-update.tar.bz2
-- export PATH="$PATH:${PWD}/gcc-arm-none-eabi-8-2019-q3-updates/bin"
-- cd ..
-- mkdir swarm-encrypt && cd swarm-encrypt
-- echo "${PWD}"
-- cp /home/travis/build/rajitha1908/GitAWS/swarm-encrypt ${PWD}
-- echo "$PATH"
-- popd
-#- cp ./swarm-encrypt $HOME/swarm-encrypt/bin
-- arm-none-eabi-gcc --version
+- if [[$TRAVIS_COMMIT_MSG =~ "DevDC1"]]; then ./batch.bat; fi
+- if [[$TRAVIS_COMMIT_MSG =~ "02L"]]; then ./deploy.sh; fi
 - pwd
 
 script: 
