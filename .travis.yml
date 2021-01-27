@@ -14,6 +14,7 @@ install:
 - pwd
 
 script: 
+  skip_cleanup : true
 - chmod +x deploy.sh
 - ./deploy.sh
   
