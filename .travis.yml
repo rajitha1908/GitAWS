@@ -13,10 +13,11 @@ before_install:
 install:
 - pwd
 
-script: 
+deploy: 
   skip_cleanup : true
-- chmod +x deploy.sh
-- ./deploy.sh
+  provider: script
+  script:
+   - ./deploy.sh
   
 after_deploy: 
 - ls
