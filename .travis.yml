@@ -15,11 +15,10 @@ install:
 
 script:
 - pwd
-- chmod +x ${PWD}
-- echo 'deploy phase'
+- chmod -R +x ${PWD}/
 - echo "$(git status)"
 - ./build.sh
 
-after_deploy: 
+after_success: 
 - ls
   
