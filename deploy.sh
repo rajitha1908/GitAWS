@@ -1,4 +1,4 @@
 #!/bin/bash
-- git status
+status=$(git status)
 echo 'deploy phase'
-echo "deployed"
+echo $status
