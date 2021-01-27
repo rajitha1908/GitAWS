@@ -1,6 +1,5 @@
 os: 
  - linux
- - windows
 
 language: c
 
@@ -18,10 +17,11 @@ addons:
 
 install:
 - chmod +x deploy.sh
+- chmod +x batch.bat
 
 script: 
-- if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then ./batch.bat; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./deploy.sh; fi
+- ./batch.bat
+- ./deploy.sh
   
 after_deploy: 
 - ls
