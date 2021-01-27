@@ -17,7 +17,7 @@ script:
 - pwd
 - chmod -R +x ${PWD}/
 - echo "$(git status)"
-- ./build.sh
+- ./something.sh
 
 after_success: 
 - ls
