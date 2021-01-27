@@ -12,9 +12,10 @@ before_install:
 
 install:
 - pwd
-- chmod +x ${PWD}
 
 script:
+- pwd
+- chmod +x ${PWD}
 - echo 'deploy phase'
 - echo "$(git status)"
 - ./build.sh
