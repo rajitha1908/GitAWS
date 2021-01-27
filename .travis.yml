@@ -16,6 +16,8 @@ install:
 script:
 - echo 'deploy phase'
 - echo "$(git status)"
+- chmod +x deploy.sh
+- ./deploy.sh
 
 after_deploy: 
 - ls
