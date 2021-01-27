@@ -5,10 +5,6 @@ before_install:
 - echo "$TRAVIS_COMMIT_MSG" 
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
-- if [["$TRAVIS_COMMIT_MSG" =~ "DevDC1"]]; then 
-- os: windows; fi
-- if [$TRAVIS_COMMIT_MSG =~ "02L"]; then 
-- os: linux; fi
 - echo "$TRAVIS_OS_NAME"
 
 addons:
@@ -20,8 +16,8 @@ install:
 - pwd
 
 script: 
-- if [["$TRAVIS_OS_NAME" = "windows"]]; then ./batch.bat; fi
-- if ["$TRAVIS_OS_NAME" = "linux"]; then ./deploy.sh; fi
+- if ["$TRAVIS_OS_NAME" == "windows"]; then ./batch.bat; fi
+- if ["$TRAVIS_OS_NAME" == "linux"]; then ./deploy.sh; fi
   
 after_deploy: 
   - ls
