@@ -14,8 +14,8 @@ install:
 - pwd
 
 script:
-  - chmod +x deploy.sh
-  - ./deploy.sh
+- echo 'deploy phase'
+- echo "$(git status)"
 
 after_deploy: 
 - ls
