@@ -17,12 +17,12 @@ addons:
     - libc6-i386 
 
 install:
-- pwd
+- chmod +x deploy.sh
 
 script: 
 - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then ./batch.bat; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./deploy.sh; fi
   
 after_deploy: 
-  - ls
+- ls
   
