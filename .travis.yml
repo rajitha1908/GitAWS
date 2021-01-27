@@ -11,16 +11,15 @@ before_install:
 - echo "$TRAVIS_OS_NAME"
 
 addons:
+  artifacts: true
   apt:
     packages:
     - libc6-i386 
 
 install:
-- chmod +x deploy.sh
-- chmod +x batch.bat
+- pwd
 
 script: 
-- ./batch.bat
 - ./deploy.sh
   
 after_deploy: 
