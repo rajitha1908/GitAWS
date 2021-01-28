@@ -13,20 +13,10 @@ before_install:
     
 install:
 - pwd
-- pushd /home/travis/build && mkdir arm-gcc && cd arm-gcc
-- cd ..
-- echo "${PWD}"
-- cp -R /home/travis/build/rajitha1908/GitAWS/toolchain/ ${PWD}
-- chmod -R +x ${PWD}/toolchain/
-- ls ${PWD}
-- ls ${PWD}/toolchain
-- popd
-- pwd
 
 script: 
- - chmod -R +x ${PWD}/toolchain/
- - ./toolchain/newone.txt
- - ./toolchain/deploy.sh
+ - pwd
+ - ./deploy.sh
   
 after_success: 
 - echo "deployed"
