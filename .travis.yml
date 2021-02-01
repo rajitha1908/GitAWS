@@ -1,8 +1,9 @@
 os: 
  "linux"
+ "windows"
 dist:
- "focal"
-language: c
+ "xenial"
+language: cpp
 
 before_install:
 - export TRAVIS_COMMIT_MSG="$(git log --format=%B --no-merges -n 1)"
@@ -16,7 +17,7 @@ install:
 
 script: 
  - pwd
- - ./deploy.sh
+ - ./build.bat
   
 after_success: 
 - echo "deployed"
