@@ -1,1 +1,1 @@
-bash ./deploy.sh --skip-vcs  --revision  %GIT_COMMIT% %TRAVIS_COMMIT_MSG% --build  %BUILD_NUMBER% --slave %$TRAVIS_OS_NAME%
+bash ./deploy.sh --skip-vcs  --revision  %TRAVIS_COMMIT_MSG% --build  %TRAVIS_BUILD_NUMBER% --slave %TRAVIS_OS_NAME%
