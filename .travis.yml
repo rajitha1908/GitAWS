@@ -1,6 +1,6 @@
 os: 
- "linux"
- "windows"
+ - linux
+ - windows
 dist:
  "xenial"
 language: cpp
