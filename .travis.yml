@@ -1,8 +1,7 @@
 os: 
  - linux
  - windows
-dist:
- "xenial"
+
 language: cpp
 
 before_install:
@@ -16,8 +15,11 @@ install:
 - pwd
 
 script: 
- - pwd
- - ./build.bat
+- pwd
+- if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then ./build.bat; fi
+- chmod +x deploy.sh
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./deploy.sh; fi
+
   
 after_success: 
 - echo "deployed"
