@@ -1,5 +1,4 @@
 os: 
- - linux
  - windows
 
 language: cpp
@@ -13,13 +12,16 @@ before_install:
 - curl -fL https://getcli.jfrog.io | sh
     
 install:
-- pwd
+- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
+- curl -fL https://getcli.jfrog.io | sh
+- popd
+
 
 script: 
 - pwd
 - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then ./build.bat; fi
-- chmod +x deploy.sh
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./deploy.sh; fi
+#- chmod +x deploy.sh
+#- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./deploy.sh; fi
 
   
 after_success: 
