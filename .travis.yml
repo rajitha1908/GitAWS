@@ -13,7 +13,7 @@ before_install:
 install:
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - curl -fL https://getcli.jfrog.io | sh
-- cp /home/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
+- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - 7z x folder1.zip
 - ls
 - popd
