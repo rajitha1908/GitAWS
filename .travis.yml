@@ -9,11 +9,13 @@ before_install:
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
 - echo "${PWD}"
-- curl -fL https://getcli.jfrog.io | sh
     
 install:
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - curl -fL https://getcli.jfrog.io | sh
+- cp /home/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
+- 7z x folder1.zip
+- ls
 - popd
 
 
