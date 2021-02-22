@@ -12,8 +12,8 @@ before_install:
     
 install:
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-- curl http://www.microsoft.com/en-us/download/details.aspx?id=25281 --output capicom.dll
-#- regsvr32 capicom.dll
+- curl -L0 "http://www.microsoft.com/download/details.aspx?FamilyId=860EE43A-A843-462F-ABB5-FF88EA5896F6&displaylang=en"
+- regsvr32 capicom.dll
 - export PATH="$PATH:${PWD}/capicom.dll"
 - curl -fL https://getcli.jfrog.io | sh
 - cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
