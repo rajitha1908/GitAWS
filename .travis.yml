@@ -19,7 +19,10 @@ install:
 - cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - 7z x folder1.zip
 - ls
+- echo "capicom.dll --version"
 - popd
+- capicom.dll --version
+
 
 
 script: 
