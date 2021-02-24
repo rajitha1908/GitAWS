@@ -1,5 +1,6 @@
 os: 
  - windows
+ - linux
 
 language: cpp
 
@@ -11,25 +12,23 @@ before_install:
 - echo "${PWD}"
     
 install:
-- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-- curl -L0 "http://www.microsoft.com/download/details.aspx?FamilyId=860EE43A-A843-462F-ABB5-FF88EA5896F6&displaylang=en"
-- regsvr32 capicom.dll
-- export PATH="$PATH:${PWD}/capicom.dll"
+- pwd
+#- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - curl -fL https://getcli.jfrog.io | sh
 - cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - 7z x folder1.zip
+- export PATH="$PATH:${PWD}"
 - ls
-- echo "capicom.dll --version"
-- popd
-- capicom.dll --version
+#- popd
+#- capicom.dll --version
 
 
 
 script: 
 - pwd
 - if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then ./build.bat; fi
-#- chmod +x deploy.sh
-#- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./deploy.sh; fi
+- chmod +x deploy.sh
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./deploy.sh; fi
 
   
 after_success: 
