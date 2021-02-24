@@ -15,7 +15,7 @@ install:
 - pwd
 #- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - curl -fL https://getcli.jfrog.io | sh
-- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
+#- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - 7z x folder1.zip
 - export PATH="$PATH:${PWD}"
 - ls
