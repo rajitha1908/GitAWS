@@ -17,7 +17,7 @@ install:
 #- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - curl -fL https://getcli.jfrog.io | sh
 #- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
-- jar xf folder1.zip
+- travis_wait 30 jar xf folder1.zip
 - export PATH="$PATH:${PWD}"
 - ls
 #- popd
