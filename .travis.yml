@@ -23,7 +23,7 @@ install:
 - sudo wget https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run
 #- sudo chmod +x ./qt-opensource-linux-x64-5.12.10.run
 #- sudo ./qt-opensource-linux-x64-5.12.10.run
-#- qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+- qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
 - cd ..
 #- export PATH="$PATH:${PWD}/arm/qmake"
