@@ -15,7 +15,7 @@ before_install:
 install:
 - pwd
 - pushd /home/travis/build/ && mkdir arm && cd arm
-- curl http://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run
+- curl https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run
 - qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
 - cd ..
