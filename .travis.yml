@@ -14,13 +14,13 @@ before_install:
     
 install:
 - pwd
-#- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-- curl -fL https://getcli.jfrog.io | sh
-#- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
-- travis_wait 30 jar xf folder1.zip
-- export PATH="$PATH:${PWD}"
+- pushd /c/Users/travis/build/ && mkdir arm && cd arm
+- curl http://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run
+- qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
-#- popd
+- export PATH="$PATH:${PWD}/qmake"
+- ls
+- popd
 #- capicom.dll --version
 
 
