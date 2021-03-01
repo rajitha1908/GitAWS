@@ -9,7 +9,7 @@ before_install:
 - git config --global user.email rajitha.siripurapu@gmail.com
 - echo "${PWD}"
 - sudo apt-get install qdbus qmlscene qt5-default qt5-qmake qtbase5-dev-tools qtchooser qtdeclarative5-dev xbitmaps xterm libqt5svg5-dev qttools5-dev qtscript5-dev qtdeclarative5-folderlistmodel-plugin qtdeclarative5-controls-plugin python-software-properties build-essential g++-4.8 
-- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+#- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y p7zip-full; fi
 addons:
@@ -24,12 +24,12 @@ install:
 - pwd
 - pushd /home/travis/build/ && mkdir arm && cd arm
 - sudo wget https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run
-#- sudo chmod +x ./qt-opensource-linux-x64-5.12.10.run
-#- sudo ./qt-opensource-linux-x64-5.12.10.run
+- sudo chmod +x ./qt-opensource-linux-x64-5.12.10.run
+- sudo ./qt-opensource-linux-x64-5.12.10.run
 - qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
 - cd ..
-#- export PATH="$PATH:${PWD}/arm/qmake"
+- export PATH="$PATH:${PWD}/arm/qmake"
 - ls
 - popd
 #- capicom.dll --version
