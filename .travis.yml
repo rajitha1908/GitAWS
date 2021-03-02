@@ -22,7 +22,7 @@ install:
 #- curl -L0 "https://api.bintray.com/content/jfrog/jfrog-cli-go/$latest/jfrog-cli-windows-amd64/jfrog.exe?bt_package=jfrog-cli-windows-amd64"
 #- chmod +x jfrog
 - curl -fL https://getcli.jfrog.io | sh
-- ./jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USERNAME --interactive=false
+- ./jfrog rt config --url $ARTIFACTORY_URL --access-token $ARTIFACTORY_USERNAME --interactive=false
 - cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - jar xf folder1.zip
 - cd ..
