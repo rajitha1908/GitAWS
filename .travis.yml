@@ -12,26 +12,20 @@ before_install:
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y p7zip-full; fi
-addons:
-  apt:
-    packages:
-      - libxkbcommon-x11-0
-      - libgl1-mesa-dev  
+
 #env:
     #- QT_CI_PACKAGES=qt.qt5.5120.gcc_64,qt.qt5.5120.qtwebengine PATH="/home/travis/build/Qt/5.12.0/gcc_64/bin:${PATH}"
   
 install:
 - pwd
-- pushd /home/travis/build/ && mkdir arm && cd arm
-- sudo wget https://download.qt.io/official_releases/qt/5.12/5.12.0/qt-opensource-linux-x64-5.12.0.run
-- sudo chmod +x ./qt-opensource-linux-x64-5.12.0.run
-- sudo ./qt-opensource-linux-x64-5.12.0.run
-- qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+#- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
+- curl -fL https://getcli.jfrog.io | sh
+- jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USERNAME
+- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
+- jar xf folder1.zip
+- export PATH="$PATH:${PWD}"
 - ls
-- cd ..
-- export PATH="$PATH:${PWD}/arm/qmake"
-- ls
-- popd
+#- popd
 #- capicom.dll --version
 
 
