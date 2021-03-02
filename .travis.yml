@@ -19,7 +19,7 @@ before_install:
 install:
 - pwd
 #- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-- curl -fL https://getcli.jfrog.io | sh
+- choco install jfrog-cli
 - ./jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USERNAME
 - cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - jar xf folder1.zip
