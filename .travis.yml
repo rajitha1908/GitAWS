@@ -20,7 +20,7 @@ install:
 - pwd
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - curl -L0 "https://api.bintray.com/content/jfrog/jfrog-cli-go/$latest/jfrog-cli-windows-amd64/jfrog.exe"
-- chmod +x jfrog
+#- chmod +x jfrog
 - jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USERNAME
 - cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - jar xf folder1.zip
