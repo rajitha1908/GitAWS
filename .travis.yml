@@ -27,6 +27,10 @@ install:
 - ls 
 - popd
 - qmake --version
+- make --version
+- qtdiag
+- qmake-qt5 --version
+
 
 
 
