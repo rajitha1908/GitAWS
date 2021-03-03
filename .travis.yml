@@ -10,8 +10,7 @@ before_install:
 - echo "${PWD}"
 - sudo apt-get install --force-yes -qq p7zip  #lib32* are needed by Android SDK
 - sudo apt-get install qtcreator
-
-#- sudo apt-get install qtchooser g++-4.8 qt5-qmake make
+- sudo apt-get install qtchooser 
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 #- sudo update-alternatives --config qmake
 #- sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
@@ -27,7 +26,7 @@ install:
 - pushd /home/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - wget -q "https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run"
 - chmod +x qt-opensource-linux-x64-5.12.10.run
-- ./qt-opensource-linux-x64-5.12.10.run
+#- ./qt-opensource-linux-x64-5.12.10.run
 - qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
 - qmake --version
