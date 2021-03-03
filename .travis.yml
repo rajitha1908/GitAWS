@@ -8,7 +8,7 @@ before_install:
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
 - echo "${PWD}"
-- sudo apt-get install qdbus qmlscene qtbase5-dev-tools qtchooser qtdeclarative5-dev xbitmaps xterm libqt5svg5-dev qttools5-dev qtscript5-dev qtdeclarative5-folderlistmodel-plugin qtdeclarative5-controls-plugin python-software-properties build-essential g++-4.8 
+- sudo apt-get install qtchooser g++-4.8 
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y p7zip-full; fi
@@ -20,7 +20,7 @@ install:
 - pwd
 - pushd /home/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - sudo wget -q "https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run"
-- qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+- qtchooser -install 5.12.0 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
 - qmake --version
 - cd ..
@@ -29,7 +29,6 @@ install:
 - popd
 - qmake --version
 - make --version
-- qtdiag
 - qmake-qt5 --version
 
 script: 
