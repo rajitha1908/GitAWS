@@ -19,12 +19,13 @@ before_install:
 install:
 - pwd
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-#- curl -L0 "https://api.bintray.com/content/jfrog/jfrog-cli-go/$latest/jfrog-cli-windows-amd64/jfrog.exe?bt_package=jfrog-cli-windows-amd64"
-#- chmod +x jfrog
-- curl -fL https://getcli.jfrog.io | sh
-- ./jfrog rt config --url $ARTIFACTORY_URL --access-token $ARTIFACTORY_USERNAME --interactive=false
-- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
-- jar xf folder1.zip
+- export http_proxy=http://viruswall:3128
+- export https_proxy=http://viruswall:3128
+- git clone https://github.com/qt/qtmqtt.git
+- cd qtmqtt.git
+- git fetch origin c6b54f189d280163d4cfb2ab0d7184f387765125
+- git reset --hard FETCH_HEAD
+- cd ..
 - cd ..
 - export PATH="$PATH:${PWD}/arm-gcc"
 - ls
