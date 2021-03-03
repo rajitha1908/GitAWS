@@ -19,15 +19,9 @@ before_install:
 install:
 - pwd
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-#- export http_proxy=http://viruswall:3128
-#- export https_proxy=http://viruswall:3128
-- git clone https://github.com/qt/qtmqtt.git
+- sudo wget -q https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run
+- qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
-- cd qtmqtt
-- ls
-- git fetch origin c6b54f189d280163d4cfb2ab0d7184f387765125
-- git reset --hard FETCH_HEAD
-- cd ..
 - cd ..
 - export PATH="$PATH:${PWD}/arm-gcc"
 - ls 
