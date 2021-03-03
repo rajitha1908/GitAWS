@@ -10,6 +10,8 @@ before_install:
 - echo "${PWD}"
 - sudo apt-get install qtchooser g++-4.8 
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+- sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
+
 
 #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y p7zip-full; fi
 
