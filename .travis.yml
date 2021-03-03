@@ -25,7 +25,7 @@ install:
 - pwd
 - pushd /home/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - wget -c https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run
-- extract-qt-installer --list-packages qt-unified-linux-x64-online.run
+#- extract-qt-installer --list-packages qt-unified-linux-x64-online.run
 - install-qt-5.12.0
 - ls
 - qmake --version
