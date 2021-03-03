@@ -22,7 +22,8 @@ install:
 #- export http_proxy=http://viruswall:3128
 #- export https_proxy=http://viruswall:3128
 - git clone https://github.com/qt/qtmqtt.git
-- cd qtmqtt.git
+- ls
+- cd qtmqtt
 - git fetch origin c6b54f189d280163d4cfb2ab0d7184f387765125
 - git reset --hard FETCH_HEAD
 - cd ..
