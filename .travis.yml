@@ -26,7 +26,7 @@ install:
 - export PATH="$PATH:${PWD}/arm-gcc"
 - ls 
 - popd
-#- capicom.dll --version
+- qmake --version
 
 
 
