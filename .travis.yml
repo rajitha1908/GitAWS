@@ -27,7 +27,7 @@ install:
 - pushd /home/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - curl "https://qt.mirror.constant.com/archive/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run" --output qt-opensource-linux-x64-5.12.10.run
 - chmod +x qt-opensource-linux-x64-5.12.10.run
-- qt-opensource-linux-x64-5.12.10.run
+- ./qt-opensource-linux-x64-5.12.10.run
 - man qtchooser 
 - qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
