@@ -8,10 +8,10 @@ before_install:
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
 - echo "${PWD}"
-- sudo apt-get install qtchooser g++-4.8 qt5-qmake
+- sudo apt-get install qtchooser g++-4.8
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
-- sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
 - sudo update-alternatives --config qmake
+- sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
 
 
 #- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y p7zip-full; fi
@@ -32,7 +32,6 @@ install:
 - popd
 - qmake --version
 - make --version
-- qmake-qt5 --version
 
 script: 
 - pwd
