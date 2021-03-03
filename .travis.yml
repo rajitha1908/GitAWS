@@ -19,8 +19,8 @@ before_install:
 install:
 - pwd
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-- export http_proxy=http://viruswall:3128
-- export https_proxy=http://viruswall:3128
+#- export http_proxy=http://viruswall:3128
+#- export https_proxy=http://viruswall:3128
 - git clone https://github.com/qt/qtmqtt.git
 - cd qtmqtt.git
 - git fetch origin c6b54f189d280163d4cfb2ab0d7184f387765125
