@@ -1,6 +1,6 @@
 os: 
- - windows
- #- linux
+ #- windows
+ - linux
 
 language: cpp
 
@@ -19,7 +19,7 @@ before_install:
 install:
 - pwd
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
-- sudo wget "https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run"
+- sudo wget -q "https://download.qt.io/official_releases/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run"
 - qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 - ls
 - cd ..
