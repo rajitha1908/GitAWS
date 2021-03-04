@@ -11,6 +11,8 @@ before_install:
 - sudo apt-get install qtcreator
 - sudo apt-get install qtchooser qt5-qmake
 - sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
+- export QT_DEBUG_PLUGINS=1
+
 
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 #- sudo update-alternatives --config qmake
