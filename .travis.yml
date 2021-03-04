@@ -1,6 +1,6 @@
 os: 
- #- windows
- - linux
+ - windows
+ #- linux
 
 language: cpp
 
@@ -8,12 +8,12 @@ before_install:
 - git config --global user.name rajitha1905
 - git config --global user.email rajitha.siripurapu@gmail.com
 - echo "${PWD}"
-- sudo apt-get install qtcreator
-- sudo apt-get install qtchooser qt5-qmake
-- sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
-- export QT_DEBUG_PLUGINS=1
-- sudo apt-get install libqt5x11extras5
-- sudo apt-get install libxcb-render-util0 libxcb-image0 libxcb-keysyms1 libxcb-icccm4
+#- sudo apt-get install qtcreator
+#- sudo apt-get install qtchooser qt5-qmake
+#- sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
+#- export QT_DEBUG_PLUGINS=1
+#- sudo apt-get install libqt5x11extras5
+#- sudo apt-get install libxcb-render-util0 libxcb-image0 libxcb-keysyms1 libxcb-icccm4
 
 
 
@@ -29,20 +29,15 @@ before_install:
   
 install:
 - pwd
-- pushd /home/travis/build/ && mkdir arm-gcc && cd arm-gcc
-- curl "https://qt.mirror.constant.com/archive/qt/5.12/5.12.10/qt-opensource-linux-x64-5.12.10.run" --output qt-opensource-linux-x64-5.12.10.run
-- chmod +x qt-opensource-linux-x64-5.12.10.run
-- ./qt-opensource-linux-x64-5.12.10.run
-- man qtchooser 
-- qtchooser -install 5120 /usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+- pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
+- echo "Password:$ARTIFACTORY_USERNAME"
+- curl -fL https://getcli.jfrog.io | sh
+- sh ./jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USERNAME
+- cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
+- jar xf folder1.zip
+- export PATH="$PATH:${PWD}"
 - ls
-- qmake --version
-- cd ..
-- export PATH="$PATH:${PWD}/arm-gcc"
-- ls 
 - popd
-- qmake --version
-- make --version
 
 script: 
 - pwd
