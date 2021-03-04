@@ -13,6 +13,9 @@ before_install:
 - sudo update-alternatives --install /usr/bin/qmake qmake /usr/lib/x86_64-linux-gnu/qt5/bin/qmake 100
 - export QT_DEBUG_PLUGINS=1
 - sudo apt-get install libqt5x11extras5
+- sudo apt-get install libxcb-render-util0 libxcb-image0 libxcb-keysyms1 libxcb-icccm4
+
+
 
 #- sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 #- sudo update-alternatives --config qmake
