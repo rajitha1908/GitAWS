@@ -32,7 +32,7 @@ install:
 - pushd /c/Users/travis/build/ && mkdir arm-gcc && cd arm-gcc
 - echo "Password:$ARTIFACTORY_USERNAME"
 - curl -fL https://getcli.jfrog.io | sh
-- JFROG_CLI_LOG_LEVEL=ERROR jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USERNAME
+- $JFROG_CLI_LOG_LEVEL jfrog rt config --url $ARTIFACTORY_URL --user $ARTIFACTORY_USERNAME
 - cp /c/Users/travis/build/rajitha1908/GitAWS/folder1.zip ${PWD}
 - jar xf folder1.zip
 - export PATH="$PATH:${PWD}"
